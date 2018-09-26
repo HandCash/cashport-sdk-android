@@ -7,6 +7,7 @@ import android.os.CountDownTimer;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import io.handcash.cashport.ISignTransactionRequestCallback;
+import io.handcash.cashport.SignTransactionRequestWrapper;
 
 public class FirebaseChannelHandler {
 
@@ -34,7 +35,15 @@ public class FirebaseChannelHandler {
     }
 
     public void registerTransactionRequestCallback(ISignTransactionRequestCallback signTransactionRequestCallback) {
-        this.sendTransactionResponseReceiver.setSignTransactionRequestCallback( signTransactionRequestCallback );
+        final boolean[] hasPendingRequest = {true};
+        this.sendTransactionResponseReceiver.setSignTransactionRequestCallback(
+                new SignTransactionRequestWrapper( signTransactionRequestCallback ) {
+                    @Override
+                    public void onEnd() {
+                        super.onEnd();
+                        hasPendingRequest[0] = false;
+                    }
+                } );
         new CountDownTimer( WAIT_FIREBASE_RESPONSE_TIMEOUT_MILLIS, WAIT_FIREBASE_RESPONSE_TIMEOUT_MILLIS ) {
 
             @Override
@@ -44,7 +53,9 @@ public class FirebaseChannelHandler {
 
             @Override
             public void onFinish() {
-                signTransactionRequestCallback.onDeviceNotAvailable();
+                if ( hasPendingRequest[0] ) {
+                    signTransactionRequestCallback.onDeviceNotAvailable();
+                }
             }
         }.start();
     }
