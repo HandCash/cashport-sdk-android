@@ -1,0 +1,130 @@
+{
+  "project_info": {
+    "project_number": "89393363979",
+    "firebase_url": "https://handcash-188517.firebaseio.com",
+    "project_id": "handcash-188517",
+    "storage_bucket": "handcash-188517.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89393363979:android:0fd2593a9a28a947",
+        "android_client_info": {
+          "package_name": "com.freaks.app.handcash"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89393363979-re8llmv5bpommc5upui3g4cv40emcqja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtTK1H4UOdP9Ib12eN_CKS1jOgQ1a0KsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89393363979:android:2855e9274a9d8e38",
+        "android_client_info": {
+          "package_name": "com.freaks.app.handcash.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89393363979-2bp13cih3afsgquc54jqfpsl8pjedgrn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freaks.app.handcash.beta",
+            "certificate_hash": "c0995ffac1d36c1e404f709071d44efbea1c9136"
+          }
+        },
+        {
+          "client_id": "89393363979-re8llmv5bpommc5upui3g4cv40emcqja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtTK1H4UOdP9Ib12eN_CKS1jOgQ1a0KsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89393363979-re8llmv5bpommc5upui3g4cv40emcqja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:89393363979:android:ecb8e440a83663c9",
+        "android_client_info": {
+          "package_name": "com.freaks.app.handcash.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "89393363979-21rd01cde4huhs1fd4rlfp8tki4sifmg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.freaks.app.handcash.dev",
+            "certificate_hash": "50c8d03868dc0ed81d160fc9dbcfb2bbb937d118"
+          }
+        },
+        {
+          "client_id": "89393363979-re8llmv5bpommc5upui3g4cv40emcqja.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtTK1H4UOdP9Ib12eN_CKS1jOgQ1a0KsI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "89393363979-re8llmv5bpommc5upui3g4cv40emcqja.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
