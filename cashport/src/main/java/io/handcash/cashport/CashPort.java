@@ -66,7 +66,7 @@ public class CashPort {
                 }
             } );
             DeepLinkHandler deepLinkHandler = DeepLinkHandler.createWithDefaultParser( factory,
-                    configuration.getSchema(), configuration.getHost() );
+                    configuration.getScheme(), configuration.getHost() );
             deepLinkHandler.handleLink( intent.getData().toString() );
         }
     }

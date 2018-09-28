@@ -5,7 +5,7 @@ import io.handcash.cashport.sdk.entity.AuthorizationConfiguration;
 
 public class AuthorizationConfigurationBuilder {
 
-    private String schema;
+    private String scheme;
     private String host;
     private String successPath;
     private String deniedPath;
@@ -14,8 +14,8 @@ public class AuthorizationConfigurationBuilder {
         return new AuthorizationConfigurationBuilder();
     }
 
-    public AuthorizationConfigurationBuilder setSchema(String schema) {
-        this.schema = schema;
+    public AuthorizationConfigurationBuilder setScheme(String scheme) {
+        this.scheme = scheme;
         return this;
     }
 
@@ -35,7 +35,7 @@ public class AuthorizationConfigurationBuilder {
     }
 
     public AuthorizationConfiguration build() {
-        return new AuthorizationConfiguration( schema, host, successPath, deniedPath );
+        return new AuthorizationConfiguration(scheme, host, successPath, deniedPath );
     }
 
 }

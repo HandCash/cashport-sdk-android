@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent( intent );
         AuthorizationConfiguration config = AuthorizationConfigurationBuilder.create()
-                .setSchema( "app" )
+                .setScheme( "app" )
                 .setHost( "handle-tippr.io" )
                 .setSuccessPath( "/cashport/onSuccess" )
                 .setDeniedPath( "/cashport/onDeny" )

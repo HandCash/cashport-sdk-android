@@ -2,7 +2,7 @@ package io.handcash.cashport.sdk.entity;
 
 public class AuthorizationConfiguration {
 
-    private String schema;
+    private String scheme;
     private String host;
     private String successPath;
     private String deniedPath;
@@ -10,19 +10,19 @@ public class AuthorizationConfiguration {
     public AuthorizationConfiguration() {
     }
 
-    public AuthorizationConfiguration(String schema, String host, String successPath, String deniedPath) {
-        this.schema = schema;
+    public AuthorizationConfiguration(String scheme, String host, String successPath, String deniedPath) {
+        this.scheme = scheme;
         this.host = host;
         this.successPath = successPath;
         this.deniedPath = deniedPath;
     }
 
-    public String getSchema() {
-        return schema;
+    public String getScheme() {
+        return scheme;
     }
 
-    public void setSchema(String schema) {
-        this.schema = schema;
+    public void setScheme(String scheme) {
+        this.scheme = scheme;
     }
 
     public String getHost() {
@@ -52,7 +52,7 @@ public class AuthorizationConfiguration {
     @Override
     public String toString() {
         return "AuthorizationConfiguration{" +
-                ", schema='" + schema + '\'' +
+                ", scheme='" + scheme + '\'' +
                 ", host='" + host + '\'' +
                 ", successPath='" + successPath + '\'' +
                 ", deniedPath='" + deniedPath + '\'' +
