@@ -6,7 +6,7 @@ An Android SDK to integrate CashPort in your apps: https://cashport.io
 
 Add it in your root *build.gradle* at the end of repositories:
 
-```
+```gradle
 allprojects {
    repositories {
       ...
@@ -17,7 +17,7 @@ allprojects {
 
 **Step 2.** Add the dependency.
 
-```
+```gradle
 dependencies {
    implementation 'com.github.HandCash:cashport-sdk-android:v0.0.1'
 }
@@ -38,7 +38,7 @@ In the meanwhile you can use this `API_ID` to start developing.
 
 ## 2. Configure your manifest.
 
-```
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <manifest ...>
 
@@ -77,7 +77,7 @@ URI's are defined as `scheme://host`. So you need to replace `your.app.host` and
 
 For example, given the URI app://myFirstApp.cash you should get:
 
-```
+```xml
 <intent-filter>
 	<action android:name="android.intent.action.VIEW"/>
 	<category android:name="android.intent.category.DEFAULT"/>
@@ -92,7 +92,7 @@ For example, given the URI app://myFirstApp.cash you should get:
 
 When you want to launch the *Authorization Request*:
 
-```
+```java
 private void onClickUseCashport() {
     AuthorizationRequest authorizationRequest = AuthorizationRequestBuilder.withAppId(ApiParameters.API_ID)
             .addPermission(PersonalInfoPermission.HANDLE)
@@ -109,7 +109,7 @@ At this time, the user will be redirected to his *HandCash App*. Once he handles
 
 To handle the response add the following code inside your `Activity`:
 
-```
+```java
 @Override
 protected void onNewIntent(Intent intent) {
     super.onNewIntent( intent );
@@ -139,7 +139,7 @@ protected void onNewIntent(Intent intent) {
 ```
 
 The values provided in `config` must match to your *API Credentials* to work properly. For example:
-```
+```java
 AuthorizationConfigurationBuilder.create()
             .setSchema( "app" )
             .setHost( "handle-tippr.io" )
@@ -156,7 +156,7 @@ Let's see how to tip to a $handle.
 
 This is the code you need to create a *Sign Transaction Request* and handle the response. 
 
-```
+```java
 private static final long TIP_SATOSHI_VALUE = 2500L;
 
 private void tipToHandle(String handle){
