@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import org.json.JSONObject;
 
 import io.handcash.cashport.ISignTransactionRequestCallback;
-import io.handcash.cashport.sdk.entity.CashPortApiError;
+import io.handcash.cashport.sdk.entity.CashportApiError;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -32,7 +32,7 @@ public class SendSignTransactionAPIRequestCallback implements Callback<Void> {
                 JSONObject jsonError = new JSONObject( response.errorBody().string() );
                 String errorMessage = jsonError.getString( ERROR_MESSAGE_KEY );
                 int errorCode = jsonError.getInt( ERROR_CODE_KEY );
-                callback.onBadRequest( errorMessage, CashPortApiError.getFromCode( errorCode ) );
+                callback.onBadRequest( errorMessage, CashportApiError.getFromCode( errorCode ) );
             } catch ( Exception e ) {
                 callback.onAPICallError( e );
             }

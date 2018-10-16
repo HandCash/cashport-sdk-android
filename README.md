@@ -131,7 +131,7 @@ protected void onNewIntent(Intent intent) {
         }
 
         @Override
-        public void onInternalError(Throwable throwable) {
+        public void onWalletInternalError(Throwable throwable) {
             // Ouch x2
         }
     } );
@@ -207,7 +207,7 @@ private void tipToHandle(String handle){
         }
 
         @Override
-        public void onInternalError() {
+        public void onWalletInternalError() {
             // Ouch, our bad!
         }
 

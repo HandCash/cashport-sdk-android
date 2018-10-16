@@ -1,6 +1,6 @@
 package io.handcash.cashport;
 
-import io.handcash.cashport.sdk.entity.CashPortApiError;
+import io.handcash.cashport.sdk.entity.CashportApiError;
 
 public interface ISignTransactionRequestCallback {
 
@@ -8,7 +8,7 @@ public interface ISignTransactionRequestCallback {
 
     void onEnd();
 
-    void onSuccess();
+    void onSuccess(String transactionId);
 
     void onTokenExpired();
 
@@ -20,9 +20,9 @@ public interface ISignTransactionRequestCallback {
 
     void onDeviceNotAvailable();
 
-    void onInternalError();
+    void onWalletInternalError();
 
-    void onBadRequest(String message, CashPortApiError error);
+    void onBadRequest(String message, CashportApiError error);
 
     void onAPICallError(Throwable throwable);
 }

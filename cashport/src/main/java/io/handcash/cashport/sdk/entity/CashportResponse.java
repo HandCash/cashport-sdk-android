@@ -3,13 +3,22 @@ package io.handcash.cashport.sdk.entity;
 import java.io.Serializable;
 import java.util.Map;
 
-public class SignTransactionResponse implements Serializable {
+public class CashportResponse implements Serializable {
 
+    private String type;
     private SignTransactionResponseCode statusCode;
     private String developerMessage;
     private Map<String, String> parameters;
 
-    public SignTransactionResponse() {
+    public CashportResponse() {
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public SignTransactionResponseCode getStatusCode() {
@@ -38,7 +47,7 @@ public class SignTransactionResponse implements Serializable {
 
     @Override
     public String toString() {
-        return "SignTransactionResponse{" +
+        return "CashportResponse{" +
                 "statusCode=" + statusCode +
                 ", developerMessage='" + developerMessage + '\'' +
                 ", parameters=" + parameters +
