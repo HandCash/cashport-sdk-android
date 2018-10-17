@@ -19,7 +19,7 @@ allprojects {
 
 ```gradle
 dependencies {
-   implementation 'com.github.HandCash:cashport-sdk-android:v0.0.1'
+   implementation 'com.github.HandCash:cashport-sdk-android:v0.0.2'
 }
 ```
 
@@ -53,12 +53,6 @@ In the meanwhile you can use this `API_ID` to start developing.
 		      android:host="your.app.host" />
             </intent-filter>
         </activity>
-
-        <service android:name=".sdk.firebase.CashPortFirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
 
     </application>
 
@@ -141,7 +135,7 @@ protected void onNewIntent(Intent intent) {
 The values provided in `config` must match to your *API Credentials* to work properly. For example:
 ```java
 AuthorizationConfigurationBuilder.create()
-            .setSchema( "app" )
+            .setScheme( "app" )
             .setHost( "handle-tippr.io" )
             .setSuccessPath( "/cashport/onSuccess" )
             .setDeniedPath( "/cashport/onDeny" )
@@ -176,7 +170,7 @@ private void tipToHandle(String handle){
         }
 
         @Override
-        public void onSuccess() {
+        public void onSuccess(String transactionId) {
             // Yeah, you got it!
         }
 
