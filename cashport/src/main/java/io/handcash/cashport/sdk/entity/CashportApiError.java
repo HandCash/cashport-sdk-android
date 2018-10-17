@@ -1,6 +1,6 @@
 package io.handcash.cashport.sdk.entity;
 
-public enum CashPortApiError {
+public enum CashportApiError {
     UNKNOWN_APP_ID( -100 ),
     UNKNOWN_HANDLE( -101 ),
     INVALID_API_CREDENTIALS( -200 ),
@@ -10,7 +10,7 @@ public enum CashPortApiError {
 
     private int errorCode;
 
-    CashPortApiError(int errorCode) {
+    CashportApiError(int errorCode) {
         this.errorCode = errorCode;
     }
 
@@ -18,8 +18,8 @@ public enum CashPortApiError {
         return errorCode;
     }
 
-    public static CashPortApiError getFromCode(int code) {
-        for ( CashPortApiError error : CashPortApiError.values() ) {
+    public static CashportApiError getFromCode(int code) {
+        for ( CashportApiError error : CashportApiError.values() ) {
             if ( error.errorCode == code ) {
                 return error;
             }

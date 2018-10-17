@@ -1,6 +1,7 @@
-package io.handcash.cashport;
+package io.handcash.cashport.sdk;
 
-import io.handcash.cashport.sdk.entity.CashPortApiError;
+import io.handcash.cashport.ISignTransactionRequestCallback;
+import io.handcash.cashport.sdk.entity.CashportApiError;
 
 public class SignTransactionRequestAdapter implements ISignTransactionRequestCallback {
 
@@ -15,7 +16,7 @@ public class SignTransactionRequestAdapter implements ISignTransactionRequestCal
     }
 
     @Override
-    public void onSuccess() {
+    public void onSuccess(String transactionId) {
 
     }
 
@@ -45,12 +46,12 @@ public class SignTransactionRequestAdapter implements ISignTransactionRequestCal
     }
 
     @Override
-    public void onInternalError() {
+    public void onWalletInternalError() {
 
     }
 
     @Override
-    public void onBadRequest(String message, CashPortApiError error) {
+    public void onBadRequest(String message, CashportApiError error) {
 
     }
 

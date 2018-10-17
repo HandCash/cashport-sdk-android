@@ -10,11 +10,12 @@ android {
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
-        versionName "0.0.1"
+        versionName "0.0.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "CASHPORT_API_ENDPOINT", "\"https:hand-cash-dev.herokuapp.com/api/cashport/\""
+        buildConfigField "String", "CASHPORT_API_ENDPOINT", "\"https://hand-cash-dev.herokuapp.com/api/cashport/\""
         buildConfigField "String", "CASHPORT_AUTHORIZATION_REQUEST_URI", "\"handcash://cashport.app/auth\""
+        buildConfigField "String", "PUBNUB_SUBSCRIBE_KEY", "\"sub-c-42473d70-c7e9-11e8-b02a-a6a8b6327be1\""
     }
 
     buildTypes {
@@ -38,8 +39,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     implementation 'com.android.support:appcompat-v7:27.1.1'
 
-    implementation 'com.google.firebase:firebase-core:12.0.1'
-    implementation 'com.google.firebase:firebase-messaging:12.0.1'
+    implementation group: 'com.pubnub', name: 'pubnub-gson', version: '4.20.0'
 
     implementation 'com.github.rseibane:AndroidDeepLink:v0.0.3'
     implementation('com.squareup.retrofit2:retrofit:2.3.0')

@@ -1,5 +1,6 @@
-package io.handcash.cashport;
+package io.handcash.cashport.sdk;
 
+import io.handcash.cashport.ISignTransactionRequestCallback;
 import io.handcash.cashport.sdk.entity.CashportApiError;
 
 public class SignTransactionRequestWrapper implements ISignTransactionRequestCallback {
