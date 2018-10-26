@@ -19,7 +19,7 @@ allprojects {
 
 ```gradle
 dependencies {
-   implementation 'com.github.HandCash:cashport-sdk-android:v0.0.1'
+   implementation 'com.github.HandCash:cashport-sdk-android:v0.0.2'
 }
 ```
 
@@ -54,12 +54,6 @@ In the meanwhile you can use this `API_ID` to start developing.
             </intent-filter>
         </activity>
 
-        <service android:name=".sdk.firebase.CashPortFirebaseMessagingService">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
-            </intent-filter>
-        </service>
-
     </application>
 
 </manifest>
@@ -89,6 +83,15 @@ For example, given the URI app://myFirstApp.cash you should get:
 ✅ **Now your manifest is ready!**
 
 ## 3. Create an Authorization Request
+
+You can use the login with HandCash button (recommended) or create your own:
+
+```xml
+<io.handcash.cashport.ui.LoginWithHandCashButton
+        android:id="@+id/btn_cashport_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+```
 
 When you want to launch the *Authorization Request*:
 
@@ -141,7 +144,7 @@ protected void onNewIntent(Intent intent) {
 The values provided in `config` must match to your *API Credentials* to work properly. For example:
 ```java
 AuthorizationConfigurationBuilder.create()
-            .setSchema( "app" )
+            .setScheme( "app" )
             .setHost( "handle-tippr.io" )
             .setSuccessPath( "/cashport/onSuccess" )
             .setDeniedPath( "/cashport/onDeny" )
@@ -176,7 +179,7 @@ private void tipToHandle(String handle){
         }
 
         @Override
-        public void onSuccess() {
+        public void onSuccess(String transactionId) {
             // Yeah, you got it!
         }
 
