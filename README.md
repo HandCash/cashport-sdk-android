@@ -84,6 +84,15 @@ For example, given the URI app://myFirstApp.cash you should get:
 
 ## 3. Create an Authorization Request
 
+You can use the login with HandCash button (recommended) or create your own:
+
+```xml
+<io.handcash.cashport.ui.LoginWithHandCashButton
+        android:id="@+id/btn_cashport_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+```
+
 When you want to launch the *Authorization Request*:
 
 ```java
