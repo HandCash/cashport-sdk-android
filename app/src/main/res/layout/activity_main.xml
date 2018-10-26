@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context=".MainActivity">
+    tools:context="io.handcash.cashport_demo.MainActivity">
 
-    <Button android:id="@+id/btn_use_cashport"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="Use my CashPort"
-    />
+    <io.handcash.cashport.ui.LoginWithHandCashButton
+        android:id="@+id/btn_use_cashport"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/container_send"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/tv_login_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Connected as @rjseibane"
-            android:textSize="18sp"/>
+            android:textSize="18sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -34,48 +32,54 @@
             android:layout_marginTop="16dp"
             android:orientation="horizontal">
 
-            <Button android:id="@+id/btn_send"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:text="TIP 1¢"/>
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:text="TIP 1¢" />
 
-            <Button android:id="@+id/btn_progress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:enabled="false"
-                    android:text="Sending..."
-                    android:visibility="invisible"/>
+            <Button
+                android:id="@+id/btn_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:enabled="false"
+                android:text="Sending..."
+                android:visibility="invisible" />
 
 
-            <EditText android:id="@+id/edit_handle"
-                      android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_marginEnd="16dp"
-                      android:layout_marginRight="16dp"
-                      android:layout_toLeftOf="@id/btn_send"
-                      android:layout_toStartOf="@id/btn_send"
-                      android:hint="Enter $handle"/>
+            <EditText
+                android:id="@+id/edit_handle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/btn_send"
+                android:layout_toStartOf="@id/btn_send"
+                android:hint="Enter $handle" />
 
         </RelativeLayout>
 
-        <LinearLayout android:layout_width="match_parent"
-                      android:layout_height="wrap_content"
-                      android:layout_marginTop="24dp"
-                      android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:orientation="vertical">
 
-            <Button android:id="@+id/btn_donate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Donate 1¢ to EAT_BCH"/>
+            <Button
+                android:id="@+id/btn_donate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Donate 1¢ to EAT_BCH" />
 
-            <Button android:id="@+id/btn_send_myself"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Tip 1¢ to myself"/>
+            <Button
+                android:id="@+id/btn_send_myself"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tip 1¢ to myself" />
 
         </LinearLayout>
 

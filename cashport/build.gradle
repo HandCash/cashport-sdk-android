@@ -13,7 +13,7 @@ android {
         versionName "0.0.2"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        buildConfigField "String", "CASHPORT_API_ENDPOINT", "\"https://hand-cash-dev.herokuapp.com/api/cashport/\""
+        buildConfigField "String", "CASHPORT_API_ENDPOINT", "\"https://api.handcash.io/api/cashport/\""
         buildConfigField "String", "CASHPORT_AUTHORIZATION_REQUEST_URI", "\"handcash://cashport.app/auth\""
         buildConfigField "String", "PUBNUB_SUBSCRIBE_KEY", "\"sub-c-42473d70-c7e9-11e8-b02a-a6a8b6327be1\""
     }
@@ -27,6 +27,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        preDexLibraries = false
     }
 
 }

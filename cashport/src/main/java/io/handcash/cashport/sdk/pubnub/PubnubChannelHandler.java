@@ -58,6 +58,7 @@ public class PubnubChannelHandler implements IChannelHandler {
             @Override
             public void onFinish() {
                 if (!hasReceivedResponse[0]) {
+                    signTransactionRequestCallback.onEnd();
                     signTransactionRequestCallback.onDeviceNotAvailable();
                 }
             }

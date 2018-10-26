@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_round"
+    android:foreground="?attr/selectableItemBackgroundBorderless"
+    android:outlineProvider="background"
+    android:paddingBottom="12dp"
+    android:paddingEnd="24dp"
+    android:paddingLeft="24dp"
+    android:paddingRight="24dp"
+    android:paddingStart="24dp"
+    android:paddingTop="12dp">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:clickable="false"
+        android:focusable="false"
+        android:src="@drawable/cash_logo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/img"
+        android:layout_toRightOf="@id/img"
+        android:clickable="false"
+        android:focusable="false"
+        android:fontFamily="@font/renner_medium"
+        android:text="Connect with HandCash"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp" />
+
+</RelativeLayout>

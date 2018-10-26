@@ -3,7 +3,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "io.handcash.cashport"
+        applicationId "io.handcash.cashport_demo"
         resValue "string", "app_name", "CashPort Demo"
         minSdkVersion 16
         targetSdkVersion 27
@@ -20,6 +20,9 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dexOptions {
+        preDexLibraries = false
     }
 }
 

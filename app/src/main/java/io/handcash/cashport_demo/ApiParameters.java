@@ -1,4 +1,4 @@
-package io.handcash.cashport;
+package io.handcash.cashport_demo;
 
 public class ApiParameters {
 

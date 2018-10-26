@@ -1,4 +1,4 @@
-package io.handcash.cashport;
+package io.handcash.cashport_demo;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,12 +15,21 @@ import android.widget.Toast;
 
 import java.net.MalformedURLException;
 
+import io.handcash.cashport.AuthorizationConfigurationBuilder;
+import io.handcash.cashport.AuthorizationRequestBuilder;
+import io.handcash.cashport.CashPort;
+import io.handcash.cashport.IRequestAuthorizationCallback;
+import io.handcash.cashport.ISignTransactionRequestCallback;
+import io.handcash.cashport.PaymentRequestFactory;
+import io.handcash.cashport.SignTransactionRequestBuilder;
+import io.handcash.cashport.app.R;
 import io.handcash.cashport.sdk.entity.AuthorizationConfiguration;
 import io.handcash.cashport.sdk.entity.AuthorizationRequest;
 import io.handcash.cashport.sdk.entity.AuthorizationResponse;
 import io.handcash.cashport.sdk.entity.CashportApiError;
 import io.handcash.cashport.sdk.entity.PersonalInfoPermission;
 import io.handcash.cashport.sdk.entity.SignTransactionRequest;
+import io.handcash.cashport.ui.LoginWithHandCashButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     private String authToken;
     private String channelId;
 
-    private Button btnUseMyCashPort;
+    private LoginWithHandCashButton btnUseMyCashPort;
     private Button btnTipToHandle;
     private Button btnTipToMyself;
     private Button btnDonate;
@@ -108,10 +117,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
         AuthorizationConfiguration config = AuthorizationConfigurationBuilder.create()
-                .setScheme( "app" )
-                .setHost( "handle-tippr.io" )
-                .setSuccessPath( "/cashport/onSuccess" )
-                .setDeniedPath( "/cashport/onDeny" )
+                .setScheme("app")
+                .setHost("handle-tippr.io")
+                .setSuccessPath("/cashport/onSuccess")
+                .setDeniedPath("/cashport/onDeny")
                 .build();
         cashPort.onNewIntent(intent, config, new IRequestAuthorizationCallback() {
             @Override

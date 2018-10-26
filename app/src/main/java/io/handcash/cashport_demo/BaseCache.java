@@ -1,4 +1,4 @@
-package io.handcash.cashport;
+package io.handcash.cashport_demo;
 
 import android.content.Context;
 import android.content.SharedPreferences;
